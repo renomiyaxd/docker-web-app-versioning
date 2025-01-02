@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Version 2</title>
+</head>
+<body>
+    <h1>OS Information</h1>
+    <h2>This is Version 2, displaying OS versions</h2>
+    <p>CPU Usage: <span id="cpu"></span></p>
+    <script>
+        fetch('/os-info')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('cpu').innerText = data.cpuUsage;
+            });
+    </script>
+</body>
+</html>
